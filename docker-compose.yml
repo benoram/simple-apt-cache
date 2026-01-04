@@ -1,0 +1,19 @@
+services:
+  apt-cache:
+    build: .
+    image: simple-apt-cache:latest
+    container_name: apt-cache
+    ports:
+      - "3142:3142"
+    volumes:
+      - apt-cache-data:/var/cache/apt-cacher-ng
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:3142/acng-report.html"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 5s
+
+volumes:
+  apt-cache-data:
