@@ -40,7 +40,4 @@ VOLUME ["/var/cache/apt-cacher-ng"]
 HEALTHCHECK --interval=30s --timeout=10s --start-period=5s --retries=3 \
     CMD curl -f http://localhost:3142/acng-report.html || exit 1
 
-# Run as apt-cacher-ng user for security
-USER apt-cacher-ng
-
 ENTRYPOINT ["/entrypoint.sh"]

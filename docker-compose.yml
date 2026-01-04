@@ -1,7 +1,6 @@
 services:
   apt-cache:
-    build: .
-    image: simple-apt-cache:latest
+    image: ghcr.io/benoram/simple-apt-cache:latest
     container_name: apt-cache
     ports:
       - "3142:3142"
