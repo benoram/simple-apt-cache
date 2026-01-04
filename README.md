@@ -1,4 +1,4 @@
-# simple-apt-cache
+# Simple Apt Cache
 
 A Docker container running apt-cacher-ng for caching APT packages. Useful for speeding up package installations across multiple Docker containers and virtual machines on a local network.
 
